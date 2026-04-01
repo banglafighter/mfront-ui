@@ -4,6 +4,8 @@
   "main": "src/index.ts",
   "types": "src/index.ts",
   "dependencies": {
-    "mmcore-ui": "workspace:*"
+    "mmcore-ui": "workspace:*",
+    "mmcore": "workspace:*",
+    "@mfront/core": "workspace:*"
   }
 }
