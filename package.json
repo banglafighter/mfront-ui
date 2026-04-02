@@ -1,6 +1,6 @@
 {
   "name": "mfront-ui",
-  "version": "0.0.2-alpha.0",
+  "version": "0.0.2-alpha.1",
   "description": "mFront UI Specifier",
   "license": "Apache-2.0",
   "main": "src/index.ts",
