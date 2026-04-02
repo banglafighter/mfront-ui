@@ -1,6 +1,6 @@
 {
-  "name": "@mfront/ui",
-  "version": "0.0.1",
+  "name": "mfront-ui",
+  "version": "0.0.2-alpha.0",
   "description": "mFront UI Specifier",
   "license": "Apache-2.0",
   "main": "src/index.ts",
@@ -33,7 +33,7 @@
   "dependencies": {
     "mmcore-ui": "workspace:*",
     "mmcore": "workspace:*",
-    "@mfront/core": "workspace:*"
+    "mfront-core": "workspace:*"
   },
   "packageManager": "pnpm@10.28.2",
   "exports": {
@@ -61,7 +61,7 @@
     }
   },
   "keywords": [
-    "@mfront/ui",
+    "mfront-ui",
     "mfront",
     "mweb",
     "maintainable",
