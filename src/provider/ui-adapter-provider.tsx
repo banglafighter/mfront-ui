@@ -1,6 +1,6 @@
-import UIAdapterData from "./ui-adapter-data";
 import {mmReactCreateContext, mmReactUseContext} from "mmcore";
 import {MFrontException} from "@mfront/core";
+import {UIAdapterData} from "./ui-adapter-data";
 
 const UIAdapterContext = mmReactCreateContext<UIAdapterData | null>(null)
 

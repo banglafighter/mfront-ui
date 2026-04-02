@@ -1,8 +1,8 @@
-import UIActionSpec from "./ui-action-spec"
-import UIComponentSpec from "./ui-component-spec"
+import {UIComponentSpec} from "./ui-component-spec";
+import {UIActionSpec} from "./ui-action-spec";
 
 
-export default interface UIAdapterData {
+export interface UIAdapterData {
     component: UIComponentSpec
     action: UIActionSpec
 }

@@ -1,5 +1,2 @@
-
-
-export default interface UIComponentSpec {
-
+export interface UIComponentSpec {
 }
