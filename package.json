@@ -3,7 +3,7 @@
   "version": "0.0.2-alpha.1",
   "description": "mFront UI Specifier",
   "scripts": {
-    "build": "tsc -p tsconfig.build.json",
+    "build": "tsdown",
     "version:alpha": "pnpm version prerelease --preid alpha --no-git-tag-version",
     "version:beta": "pnpm version prerelease --preid beta --no-git-tag-version",
     "version:release": "pnpm version patch --no-git-tag-version",
@@ -50,13 +50,14 @@
   "publishConfig": {
     "access": "public",
     "main": "./dist/index.js",
-    "module": "./dist/index.js",
+    "module": "./dist/index.mjs",
     "types": "./dist/index.d.ts",
     "exports": {
       ".": {
-        "import": "./dist/index.js",
+        "import": "./dist/index.mjs",
+        "require": "./dist/index.js",
         "types": "./dist/index.d.ts",
-        "default": "./dist/index.js"
+        "default": "./dist/index.mjs"
       }
     }
   },
