@@ -1,6 +1,7 @@
 import {UIComponent} from "mmcore";
-import {WebToastProps} from "mmcore-ui";
+import {WebButtonProps, WebToastProps} from "mmcore-ui";
 
 export interface UIComponentSpec {
     ToastBox: UIComponent<WebToastProps>
+    Button: UIComponent<WebButtonProps>
 }
