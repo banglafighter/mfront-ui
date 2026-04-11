@@ -3,7 +3,7 @@ import {UIActionSpec} from "./provider/ui-action-spec"
 import {UIAdapterData} from "./provider/ui-adapter-data"
 import {UIAdapterProvider, useUI} from "./provider/ui-adapter-provider"
 import {UIComponentSpec} from "./provider/ui-component-spec"
-import { Button } from "./ui/button"
+import { Button, ButtonGroup } from "./ui/button"
 import { Separator } from "./ui/separator"
 import {toast, ToastBox } from "./ui/toast-box"
 
@@ -21,5 +21,6 @@ export {
     ToastBox,
     toast,
     Button,
+    ButtonGroup,
     Separator
 }
