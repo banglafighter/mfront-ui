@@ -4,6 +4,7 @@ import {UIAdapterData} from "./provider/ui-adapter-data"
 import {UIAdapterProvider, useUI} from "./provider/ui-adapter-provider"
 import {UIComponentSpec} from "./provider/ui-component-spec"
 import { Button, ButtonGroup } from "./ui/button"
+import { Card, CardAction, CardBody, CardFooter, CardHeader, CardSubTitle, CardTitle } from "./ui/card"
 import { Loader } from "./ui/loader"
 import { Separator } from "./ui/separator"
 import {toast, ToastBox } from "./ui/toast-box"
@@ -24,5 +25,13 @@ export {
     Button,
     ButtonGroup,
     Separator,
-    Loader
+    Loader,
+
+    Card,
+    CardHeader,
+    CardFooter,
+    CardBody,
+    CardTitle,
+    CardSubTitle,
+    CardAction,
 }
