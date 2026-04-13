@@ -5,6 +5,7 @@ import {UIAdapterProvider, useUI} from "./provider/ui-adapter-provider"
 import {UIComponentSpec} from "./provider/ui-component-spec"
 import { Button, ButtonGroup } from "./ui/button"
 import { Card, CardAction, CardBody, CardFooter, CardHeader, CardSubTitle, CardTitle } from "./ui/card"
+import {Grid, GridItem } from "./ui/grid"
 import { Loader } from "./ui/loader"
 import { Separator } from "./ui/separator"
 import {toast, ToastBox } from "./ui/toast-box"
@@ -34,4 +35,7 @@ export {
     CardTitle,
     CardSubTitle,
     CardAction,
+
+    Grid,
+    GridItem,
 }

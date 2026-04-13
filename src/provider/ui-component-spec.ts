@@ -2,7 +2,7 @@ import {UIComponent} from "mmcore";
 import {
     WebButtonGroupProps,
     WebButtonProps, WebCardActionProps, WebCardBodyProps, WebCardFooterProps, WebCardHeaderProps,
-    WebCardProps, WebCardSubTitleProps, WebCardTitleProps,
+    WebCardProps, WebCardSubTitleProps, WebCardTitleProps, WebGridItemProps, WebGridProps,
     WebLoaderProps,
     WebSeperatorProps,
     WebToastProps
@@ -22,4 +22,7 @@ export interface UIComponentSpec {
     CardTitle: UIComponent<WebCardTitleProps>
     CardSubTitle: UIComponent<WebCardSubTitleProps>
     CardAction: UIComponent<WebCardActionProps>
+
+    Grid: UIComponent<WebGridProps>
+    GridItem: UIComponent<WebGridItemProps>
 }
