@@ -2,7 +2,7 @@ import {UIComponent} from "mmcore";
 import {
     WebButtonGroupProps,
     WebButtonProps, WebCardActionProps, WebCardBodyProps, WebCardFooterProps, WebCardHeaderProps,
-    WebCardProps, WebCardSubTitleProps, WebCardTitleProps, WebGridItemProps, WebGridProps,
+    WebCardProps, WebCardSubTitleProps, WebCardTitleProps, WebGridItemProps, WebGridProps, WebInputFrameProps,
     WebLoaderProps,
     WebSeperatorProps,
     WebToastProps
@@ -25,4 +25,6 @@ export interface UIComponentSpec {
 
     Grid: UIComponent<WebGridProps>
     GridItem: UIComponent<WebGridItemProps>
+
+    InputFrame: UIComponent<WebInputFrameProps>
 }
