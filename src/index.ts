@@ -7,6 +7,7 @@ import { Button, ButtonGroup } from "./ui/button"
 import { Card, CardAction, CardBody, CardFooter, CardHeader, CardSubTitle, CardTitle } from "./ui/card"
 import {Grid, GridItem } from "./ui/grid"
 import { Input } from "./ui/input"
+import { InputField } from "./ui/input-field"
 import { InputFrame } from "./ui/input-frame"
 import { Loader } from "./ui/loader"
 import { Separator } from "./ui/separator"
@@ -42,5 +43,6 @@ export {
     GridItem,
 
     InputFrame,
+    InputField,
     Input,
 }
