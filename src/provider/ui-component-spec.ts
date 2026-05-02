@@ -3,6 +3,7 @@ import {
     WebButtonGroupProps,
     WebButtonProps, WebCardActionProps, WebCardBodyProps, WebCardFooterProps, WebCardHeaderProps,
     WebCardProps, WebCardSubTitleProps, WebCardTitleProps, WebGridItemProps, WebGridProps, WebInputFrameProps,
+    WebInputProps,
     WebLoaderProps,
     WebSeperatorProps,
     WebToastProps
@@ -27,4 +28,5 @@ export interface UIComponentSpec {
     GridItem: UIComponent<WebGridItemProps>
 
     InputFrame: UIComponent<WebInputFrameProps>
+    Input: UIComponent<WebInputProps>
 }
