@@ -14,6 +14,7 @@ import { InputField } from "./ui/input-field"
 import { InputFrame } from "./ui/input-frame"
 import { Loader } from "./ui/loader"
 import { Separator } from "./ui/separator"
+import { Textarea } from "./ui/textarea"
 import {toast, ToastBox } from "./ui/toast-box"
 
 export type {
@@ -51,6 +52,7 @@ export {
     InputFrame,
     InputField,
     Input,
+    Textarea,
 
     FieldGenerator,
 }

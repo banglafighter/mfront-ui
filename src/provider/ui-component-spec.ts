@@ -6,7 +6,7 @@ import {
     WebInputFieldProps, WebInputFrameProps,
     WebInputProps,
     WebLoaderProps,
-    WebSeperatorProps,
+    WebSeperatorProps, WebTextareaProps,
     WebToastProps
 } from "mmcore-ui";
 
@@ -31,6 +31,7 @@ export interface UIComponentSpec {
     InputFrame: UIComponent<WebInputFrameProps>
     InputField: UIComponent<WebInputFieldProps>
     Input: UIComponent<WebInputProps>
+    Textarea: UIComponent<WebTextareaProps>
 
     FieldGenerator: UIComponent<WebFieldGeneratorProps>
 }
