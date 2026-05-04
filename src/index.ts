@@ -7,6 +7,7 @@ import {UIAdapterProvider, useUI} from "./provider/ui-adapter-provider"
 import {UIComponentSpec} from "./provider/ui-component-spec"
 import { Button, ButtonGroup } from "./ui/button"
 import { Card, CardAction, CardBody, CardFooter, CardHeader, CardSubTitle, CardTitle } from "./ui/card"
+import { FieldGenerator } from "./ui/field-generator"
 import {Grid, GridItem } from "./ui/grid"
 import { Input } from "./ui/input"
 import { InputField } from "./ui/input-field"
@@ -50,4 +51,6 @@ export {
     InputFrame,
     InputField,
     Input,
+
+    FieldGenerator,
 }

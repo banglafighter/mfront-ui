@@ -1,6 +1,12 @@
-import {InputElementType, WebDefaultInputFieldPropsBase, WebFieldEngineProps, WebFieldSpec} from "mmcore-ui";
+import {
+    InputElementType,
+    RegisteredFieldValidated,
+    WebDefaultInputFieldPropsBase,
+    WebFieldEngineProps,
+    WebFieldSpec,
+    WebInputFieldProps
+} from "mmcore-ui";
 import {MixType, mmReactUseRef, mmReactUseState} from "mmcore";
-
 
 export default function useFieldEngine(): WebFieldEngineProps {
     const fieldSpec = mmReactUseRef(new WebFieldSpec())
@@ -48,12 +54,57 @@ export default function useFieldEngine(): WebFieldEngineProps {
         return nameValueStore.current
     }
 
+    const validateRegisterFields = (notify?: boolean): RegisteredFieldValidated => {
+        let isValid: boolean = true
+        if (notify === undefined || notify === null) {
+            notify = true
+        }
+        let fieldValues: Record<string, MixType> = getFieldValues()
+        let fieldList: WebDefaultInputFieldPropsBase[] = fieldSpecList()
+        if (fieldList && fieldList.length !== 0) {
+            fieldList.forEach((field: WebDefaultInputFieldPropsBase) => {
+                if (field.hideMe) {
+                    return
+                }
+                let value: MixType | undefined = fieldValues[field.name]
+                if (value !== undefined) {
+                    field.defaultValue = value
+                }
 
-    const updateFieldSpec = (name: string, spec: WebDefaultInputFieldPropsBase) => {
-        spec.name = name
+                let isError: boolean = false
+                if (field.validator && !field.validator.validate(field.name, value, fieldValues, field)) {
+                    isValid = false
+                    isError = true
+                } else {
+                    if (field.required && (value === undefined || value === null || value === "")) {
+                        isValid = false
+                        isError = true
+                    }
+                }
+
+                if (notify) {
+                    field.isError = isError
+                    fieldSpec.current.updateSpec(field)
+                }
+
+            });
+        }
+
+        if (notify) {
+            reload()
+        }
+
+        return {
+            isValid
+        }
+    }
+
+    const updateInputFieldSpec = (spec: WebInputFieldProps, notify?: boolean) => {
         if (fieldSpec.current) {
             fieldSpec.current.updateSpec(spec)
-            reload()
+            if (notify) {
+                reload()
+            }
         }
     }
 
@@ -69,8 +120,9 @@ export default function useFieldEngine(): WebFieldEngineProps {
         setFieldValue,
         setFieldValues,
         getFieldValues,
-        updateFieldSpec,
+        updateInputFieldSpec,
         reload,
+        validateRegisterFields,
         version
     }
 
