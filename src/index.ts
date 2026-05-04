@@ -8,6 +8,7 @@ import {UIComponentSpec} from "./provider/ui-component-spec"
 import { Button, ButtonGroup } from "./ui/button"
 import { Card, CardAction, CardBody, CardFooter, CardHeader, CardSubTitle, CardTitle } from "./ui/card"
 import { FieldGenerator } from "./ui/field-generator"
+import { FieldGroup } from "./ui/field-group"
 import {Grid, GridItem } from "./ui/grid"
 import { Input } from "./ui/input"
 import { InputField } from "./ui/input-field"
@@ -55,4 +56,5 @@ export {
     Textarea,
 
     FieldGenerator,
+    FieldGroup,
 }
