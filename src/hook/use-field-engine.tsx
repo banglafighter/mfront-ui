@@ -42,6 +42,7 @@ export default function useFieldEngine(): WebFieldEngineProps {
         if (element) {
             element.value = String(value)
         }
+        fieldSpec.current.updateDefaultValue(name, value)
     }
 
     const setFieldValues = (data: Record<string, MixType>) => {
@@ -108,6 +109,13 @@ export default function useFieldEngine(): WebFieldEngineProps {
         }
     }
 
+    const getSpec = <T, >(name: string): T | undefined => {
+        if (fieldSpec.current) {
+            return fieldSpec.current.getSpec<T>(name)
+        }
+        return undefined
+    }
+
     const reload = () => {
         setVersion(version => version + 1)
     }
@@ -122,6 +130,7 @@ export default function useFieldEngine(): WebFieldEngineProps {
         getFieldValues,
         updateInputFieldSpec,
         reload,
+        getSpec,
         validateRegisterFields,
         version
     }
