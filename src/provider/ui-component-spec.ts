@@ -6,7 +6,7 @@ import {
     WebFieldGroupProps, WebGridItemProps, WebGridProps,
     WebInputFieldProps, WebInputFrameProps,
     WebInputProps,
-    WebLoaderProps,
+    WebLoaderProps, WebSelectFieldProps,
     WebSeperatorProps, WebTextareaProps,
     WebToastProps
 } from "mmcore-ui";
@@ -33,6 +33,7 @@ export interface UIComponentSpec {
     InputField: UIComponent<WebInputFieldProps>
     Input: UIComponent<WebInputProps>
     Textarea: UIComponent<WebTextareaProps>
+    SelectField: UIComponent<WebSelectFieldProps>
 
     FieldGenerator: UIComponent<WebFieldGeneratorProps>
     FieldGroup: UIComponent<WebFieldGroupProps>
