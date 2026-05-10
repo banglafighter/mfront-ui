@@ -1,6 +1,7 @@
 import { UICommonUtil } from "./common/ui-common-util"
 import useFieldEngine from "./hook/use-field-engine"
 import useFieldHelper from "./hook/use-field-helper"
+import useUIUtil from "./hook/use-ui-util"
 import {UIActionSpec} from "./provider/ui-action-spec"
 import {UIAdapterData} from "./provider/ui-adapter-data"
 import {UIAdapterProvider, useUI} from "./provider/ui-adapter-provider"
@@ -36,6 +37,7 @@ export {
 
     UIAdapterProvider,
     useUI,
+    useUIUtil,
     UICommonUtil,
 
     ToastBox,
