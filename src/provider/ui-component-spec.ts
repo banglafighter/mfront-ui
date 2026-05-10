@@ -2,7 +2,7 @@ import {UIComponent} from "mmcore";
 import {
     WebButtonGroupProps,
     WebButtonProps, WebCardActionProps, WebCardBodyProps, WebCardFooterProps, WebCardHeaderProps,
-    WebCardProps, WebCardSubTitleProps, WebCardTitleProps, WebFieldGeneratorProps,
+    WebCardProps, WebCardSubTitleProps, WebCardTitleProps, WebDropdownProps, WebFieldGeneratorProps,
     WebFieldGroupProps, WebGridItemProps, WebGridProps,
     WebInputFieldProps, WebInputFrameProps,
     WebInputProps,
@@ -37,4 +37,5 @@ export interface UIComponentSpec {
 
     FieldGenerator: UIComponent<WebFieldGeneratorProps>
     FieldGroup: UIComponent<WebFieldGroupProps>
+    Dropdown: UIComponent<WebDropdownProps>
 }
