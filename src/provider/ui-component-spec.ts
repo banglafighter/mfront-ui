@@ -7,7 +7,8 @@ import {
     WebInputFieldProps, WebInputFrameProps,
     WebInputProps,
     WebLoaderProps, WebSelectFieldProps,
-    WebSeperatorProps, WebTextareaProps,
+    WebSeperatorProps, WebSidebarContentProps, WebSidebarProps, WebSidebarProviderProps,
+    WebSidebarTogglerProps, WebTextareaProps,
     WebToastProps
 } from "mmcore-ui";
 
@@ -38,4 +39,9 @@ export interface UIComponentSpec {
     FieldGenerator: UIComponent<WebFieldGeneratorProps>
     FieldGroup: UIComponent<WebFieldGroupProps>
     Dropdown: UIComponent<WebDropdownProps>
+
+    Sidebar: UIComponent<WebSidebarProps>
+    SidebarContent: UIComponent<WebSidebarContentProps>
+    SidebarProvider: UIComponent<WebSidebarProviderProps>
+    SidebarToggler: UIComponent<WebSidebarTogglerProps>
 }

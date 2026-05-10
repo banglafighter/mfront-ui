@@ -17,6 +17,10 @@ import { InputFrame } from "./ui/input-frame"
 import { Loader } from "./ui/loader"
 import { SelectField } from "./ui/select-field"
 import { Separator } from "./ui/separator"
+import { Sidebar } from "./ui/sidebar"
+import { SidebarContent } from "./ui/sidebar-content"
+import { SidebarProvider } from "./ui/sidebar-provider"
+import { SidebarToggler } from "./ui/sidebar-toggler"
 import { Textarea } from "./ui/textarea"
 import {toast, ToastBox } from "./ui/toast-box"
 
@@ -60,5 +64,10 @@ export {
 
     FieldGenerator,
     FieldGroup,
-    Dropdown
+    Dropdown,
+
+    Sidebar,
+    SidebarContent,
+    SidebarProvider,
+    SidebarToggler
 }
