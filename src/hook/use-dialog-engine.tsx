@@ -59,6 +59,10 @@ export default function useDialogEngine(): WebDialogEngineProps {
             })
         }
 
+        if (props.footerActionButtons) {
+            footerActionButtons = [...footerActionButtons, ...props.footerActionButtons]
+        }
+
         footerActionButtons.push({
             label: props.confirmButtonLabel ? props.confirmButtonLabel : "Confirm",
             variant: props.confirmButtonVariant ? props.confirmButtonVariant : "primary",
