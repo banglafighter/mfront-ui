@@ -1,8 +1,11 @@
-import {DialogEngineConfirmAlertProps, DialogEngineOpenProps, WebDialogEngineProps, WebFieldSpec} from "mmcore-ui";
+import {
+    DialogEngineConfirmAlertProps, DialogEngineOpenProps,
+    DialogFooterActionButton, WebDialogEngineProps, WebFieldSpec
+} from "mmcore-ui";
 import {mmReactUseRef, mmReactUseState, UINode} from "mmcore";
 
 export default function useDialogEngine(): WebDialogEngineProps {
-    let actionData = mmReactUseRef<Record<string, UINode>>({})
+    let actionData = mmReactUseRef<Record<string, UINode | DialogFooterActionButton[]>>({})
     const [isOpen, setOpen] = mmReactUseState(false);
     const open = (props: DialogEngineOpenProps) => {
         actionData.current = {}
@@ -44,14 +47,37 @@ export default function useDialogEngine(): WebDialogEngineProps {
 
         _actionData.type = "alert"
         _actionData.body = props.body
+
+        let footerActionButtons: DialogFooterActionButton[] = []
+        if (!props.disableCancelButton) {
+            footerActionButtons.push({
+                label: "Cancel",
+                variant: "outline",
+                onClick: (data?: unknown) => {
+                    close()
+                }
+            })
+        }
+
+        footerActionButtons.push({
+            label: props.confirmButtonLabel ? props.confirmButtonLabel : "Confirm",
+            variant: props.confirmButtonVariant ? props.confirmButtonVariant : "primary",
+            onClick: (data?: unknown) => {
+                if (props.confirmButtonAction) {
+                    props.confirmButtonAction(props.confirmCallbackData)
+                }
+                close()
+            }
+        })
+        _actionData.footerActionButtons = footerActionButtons
         setOpen(true)
     }
 
-    const getActionValue = (dataKey: string, defaultData?: UINode): UINode => {
+    const getActionValue = <T = UINode | DialogFooterActionButton[] | undefined>(dataKey: string, defaultData?: T): T => {
         if (Object.prototype.hasOwnProperty.call(actionData.current, dataKey)) {
-            return actionData.current[dataKey];
+            return actionData.current[dataKey] as T;
         }
-        return defaultData;
+        return defaultData as T;
     }
 
     return {
