@@ -2,7 +2,10 @@ import {UIComponent} from "mmcore";
 import {
     WebButtonGroupProps,
     WebButtonProps, WebCardActionProps, WebCardBodyProps, WebCardFooterProps, WebCardHeaderProps,
-    WebCardProps, WebCardSubTitleProps, WebCardTitleProps, WebDropdownProps, WebFieldGeneratorProps,
+    WebCardProps, WebCardSubTitleProps, WebCardTitleProps, WebDialogBodyProps, WebDialogFooterProps,
+    WebDialogGeneratorProps,
+    WebDialogHeaderProps, WebDialogProps,
+    WebDialogSubTitleProps, WebDialogTitleProps, WebDropdownProps, WebFieldGeneratorProps,
     WebFieldGroupProps, WebGridItemProps, WebGridProps,
     WebInputFieldProps, WebInputFrameProps,
     WebInputProps,
@@ -11,6 +14,7 @@ import {
     WebSidebarTogglerProps, WebTextareaProps,
     WebToastProps
 } from "mmcore-ui";
+import {Dialog} from "../ui/dialog";
 
 export interface UIComponentSpec {
     ToastBox: UIComponent<WebToastProps>
@@ -44,4 +48,12 @@ export interface UIComponentSpec {
     SidebarContent: UIComponent<WebSidebarContentProps>
     SidebarProvider: UIComponent<WebSidebarProviderProps>
     SidebarToggler: UIComponent<WebSidebarTogglerProps>
+
+    Dialog: UIComponent<WebDialogProps>
+    DialogHeader: UIComponent<WebDialogHeaderProps>
+    DialogFooter: UIComponent<WebDialogFooterProps>
+    DialogBody: UIComponent<WebDialogBodyProps>
+    DialogTitle: UIComponent<WebDialogTitleProps>
+    DialogSubTitle: UIComponent<WebDialogSubTitleProps>
+    DialogGenerator: UIComponent<WebDialogGeneratorProps>
 }

@@ -1,4 +1,5 @@
 import { UICommonUtil } from "./common/ui-common-util"
+import useDialogEngine from "./hook/use-dialog-engine"
 import useFieldEngine from "./hook/use-field-engine"
 import useFieldHelper from "./hook/use-field-helper"
 import useUIUtil from "./hook/use-ui-util"
@@ -8,6 +9,7 @@ import {UIAdapterProvider, useUI} from "./provider/ui-adapter-provider"
 import {UIComponentSpec} from "./provider/ui-component-spec"
 import { Button, ButtonGroup } from "./ui/button"
 import { Card, CardAction, CardBody, CardFooter, CardHeader, CardSubTitle, CardTitle } from "./ui/card"
+import { Dialog, DialogBody, DialogFooter, DialogGenerator, DialogHeader, DialogSubTitle, DialogTitle } from "./ui/dialog"
 import { Dropdown } from "./ui/dropdown"
 import { FieldGenerator } from "./ui/field-generator"
 import { FieldGroup } from "./ui/field-group"
@@ -71,5 +73,14 @@ export {
     Sidebar,
     SidebarContent,
     SidebarProvider,
-    SidebarToggler
+    SidebarToggler,
+
+    Dialog,
+    DialogHeader,
+    DialogFooter,
+    DialogBody,
+    DialogTitle,
+    DialogSubTitle,
+    DialogGenerator,
+    useDialogEngine,
 }
