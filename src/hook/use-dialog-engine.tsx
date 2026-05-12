@@ -40,6 +40,7 @@ export default function useDialogEngine(): WebDialogEngineProps {
             _actionData.subTitle = props.subTitle
         }
 
+        _actionData.disableBlockClose = true
         _actionData.dialogSize = "tiny"
         if (props.dialogSize) {
             _actionData.dialogSize = props.dialogSize
