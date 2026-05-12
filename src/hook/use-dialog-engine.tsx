@@ -1,4 +1,4 @@
-import {DialogEngineOpenProps, WebDialogEngineProps, WebFieldSpec} from "mmcore-ui";
+import {DialogEngineConfirmAlertProps, DialogEngineOpenProps, WebDialogEngineProps, WebFieldSpec} from "mmcore-ui";
 import {mmReactUseRef, mmReactUseState, UINode} from "mmcore";
 
 export default function useDialogEngine(): WebDialogEngineProps {
@@ -24,6 +24,29 @@ export default function useDialogEngine(): WebDialogEngineProps {
         setOpen(false);
     }
 
+    const confirm = (props: DialogEngineConfirmAlertProps) => {
+        actionData.current = {}
+        const _actionData = actionData.current
+        if (props.title) {
+            _actionData.title = props.title
+        }else {
+            _actionData.title = "Confirmation"
+        }
+
+        if (props.subTitle) {
+            _actionData.subTitle = props.subTitle
+        }
+
+        _actionData.dialogSize = "tiny"
+        if (props.dialogSize) {
+            _actionData.dialogSize = props.dialogSize
+        }
+
+        _actionData.type = "alert"
+        _actionData.body = props.body
+        setOpen(true)
+    }
+
     const getActionValue = (dataKey: string, defaultData?: UINode): UINode => {
         if (Object.prototype.hasOwnProperty.call(actionData.current, dataKey)) {
             return actionData.current[dataKey];
@@ -35,6 +58,7 @@ export default function useDialogEngine(): WebDialogEngineProps {
         close,
         open,
         isOpen,
-        getActionValue
+        getActionValue,
+        confirm
     }
 }
