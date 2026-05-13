@@ -1,6 +1,6 @@
 import {
     DialogEngineConfirmAlertProps, DialogEngineOpenProps,
-    DialogFooterActionButton, WebDialogEngineProps, WebFieldSpec
+    DialogFooterActionButton, WebDialogEngineProps,
 } from "mmcore-ui";
 import {mmReactUseRef, mmReactUseState, UINode} from "mmcore";
 

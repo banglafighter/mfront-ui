@@ -6,7 +6,7 @@ import {
     WebDialogGeneratorProps,
     WebDialogHeaderProps, WebDialogProps,
     WebDialogSubTitleProps, WebDialogTitleProps, WebDropdownProps, WebFieldGeneratorProps,
-    WebFieldGroupProps, WebGridItemProps, WebGridProps,
+    WebFieldGroupProps, WebGridItemProps, WebGridProps, WebImageProps,
     WebInputFieldProps, WebInputFrameProps,
     WebInputProps,
     WebLoaderProps, WebSelectFieldProps,
@@ -14,7 +14,6 @@ import {
     WebSidebarTogglerProps, WebTextareaProps,
     WebToastProps
 } from "mmcore-ui";
-import {Dialog} from "../ui/dialog";
 
 export interface UIComponentSpec {
     ToastBox: UIComponent<WebToastProps>
@@ -56,4 +55,6 @@ export interface UIComponentSpec {
     DialogTitle: UIComponent<WebDialogTitleProps>
     DialogSubTitle: UIComponent<WebDialogSubTitleProps>
     DialogGenerator: UIComponent<WebDialogGeneratorProps>
+
+    Image: UIComponent<WebImageProps>
 }

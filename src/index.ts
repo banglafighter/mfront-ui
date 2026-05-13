@@ -25,6 +25,7 @@ import { SidebarContent } from "./ui/sidebar-content"
 import { SidebarProvider } from "./ui/sidebar-provider"
 import { SidebarToggler } from "./ui/sidebar-toggler"
 import { Textarea } from "./ui/textarea"
+import { Image } from "./ui/image"
 import {toast, ToastBox } from "./ui/toast-box"
 
 export type {
@@ -83,4 +84,6 @@ export {
     DialogSubTitle,
     DialogGenerator,
     useDialogEngine,
+
+    Image,
 }
