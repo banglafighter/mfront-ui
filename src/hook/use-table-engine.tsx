@@ -19,10 +19,15 @@ export default function useTableEngine(): WebTableEngineProps {
         setDataList(data)
     }
 
+    const getColumns = (): WebTableGeneratorColumnProps[] => {
+        return columnsStore.current
+    }
+
 
     return {
         registerColumns,
         dataList,
-        loadData
+        loadData,
+        getColumns
     }
 }
