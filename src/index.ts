@@ -28,6 +28,7 @@ import { Textarea } from "./ui/textarea"
 import { Image } from "./ui/image"
 import {toast, ToastBox } from "./ui/toast-box"
 import { Tab } from "./ui/tab"
+import {Table, TBody, TD, TFoot, TH, THead, TR } from "./ui/table"
 
 export type {
     UIAdapterData,
@@ -88,4 +89,12 @@ export {
 
     Image,
     Tab,
+
+    Table,
+    THead,
+    TFoot,
+    TBody,
+    TR,
+    TH,
+    TD,
 }

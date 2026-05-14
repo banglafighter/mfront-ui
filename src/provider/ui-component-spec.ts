@@ -11,8 +11,10 @@ import {
     WebInputProps,
     WebLoaderProps, WebSelectFieldProps,
     WebSeperatorProps, WebSidebarContentProps, WebSidebarProps, WebSidebarProviderProps,
-    WebSidebarTogglerProps, WebTabProps, WebTextareaProps,
-    WebToastProps
+    WebSidebarTogglerProps, WebTableProps, WebTabProps, WebTBodyProps,
+    WebTDProps, WebTextareaProps, WebTFootProps, WebTHeadProps,
+    WebTHProps,
+    WebToastProps, WebTRProps
 } from "mmcore-ui";
 
 export interface UIComponentSpec {
@@ -58,4 +60,12 @@ export interface UIComponentSpec {
 
     Image: UIComponent<WebImageProps>
     Tab: UIComponent<WebTabProps>
+
+    Table: UIComponent<WebTableProps>
+    THead: UIComponent<WebTHeadProps>
+    TFoot: UIComponent<WebTFootProps>
+    TBody: UIComponent<WebTBodyProps>
+    TR: UIComponent<WebTRProps>
+    TH: UIComponent<WebTHProps>
+    TD: UIComponent<WebTDProps>
 }
