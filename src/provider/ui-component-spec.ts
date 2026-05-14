@@ -11,7 +11,7 @@ import {
     WebInputProps,
     WebLoaderProps, WebSelectFieldProps,
     WebSeperatorProps, WebSidebarContentProps, WebSidebarProps, WebSidebarProviderProps,
-    WebSidebarTogglerProps, WebTableProps, WebTabProps, WebTBodyProps,
+    WebSidebarTogglerProps, WebTableGeneratorProps, WebTableProps, WebTabProps, WebTBodyProps,
     WebTDProps, WebTextareaProps, WebTFootProps, WebTHeadProps,
     WebTHProps,
     WebToastProps, WebTRProps
@@ -68,4 +68,5 @@ export interface UIComponentSpec {
     TR: UIComponent<WebTRProps>
     TH: UIComponent<WebTHProps>
     TD: UIComponent<WebTDProps>
+    TableGenerator: UIComponent<WebTableGeneratorProps>
 }

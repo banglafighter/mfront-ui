@@ -29,6 +29,8 @@ import { Image } from "./ui/image"
 import {toast, ToastBox } from "./ui/toast-box"
 import { Tab } from "./ui/tab"
 import {Table, TBody, TD, TFoot, TH, THead, TR } from "./ui/table"
+import { TableGenerator } from "./ui/table-generator"
+import useTableEngine from "./hook/use-table-engine"
 
 export type {
     UIAdapterData,
@@ -97,4 +99,6 @@ export {
     TR,
     TH,
     TD,
+    useTableEngine,
+    TableGenerator
 }

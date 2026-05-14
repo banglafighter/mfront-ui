@@ -9,8 +9,8 @@ import {
 import {MixType, mmReactUseRef, mmReactUseState} from "mmcore";
 
 export default function useFieldEngine(): WebFieldEngineProps {
-    const fieldSpec = mmReactUseRef(new WebFieldSpec())
-    const isInitSpec = mmReactUseRef(false);
+    const fieldSpec = mmReactUseRef<WebFieldSpec>(new WebFieldSpec())
+    const isInitSpec = mmReactUseRef<boolean>(false);
     const refs = mmReactUseRef(new Map<string, InputElementType>())
     const nameValueStore = mmReactUseRef<Record<string, MixType>>({});
     const [version, setVersion] = mmReactUseState(0)
@@ -64,7 +64,7 @@ export default function useFieldEngine(): WebFieldEngineProps {
         let fieldList: WebDefaultInputFieldPropsBase[] = fieldSpecList()
         if (fieldList && fieldList.length !== 0) {
             fieldList.forEach((field: WebDefaultInputFieldPropsBase) => {
-                if (field.hideMe) {
+                if (field.isHidden) {
                     return
                 }
                 let value: MixType | undefined = fieldValues[field.name]
