@@ -11,7 +11,7 @@ import {
     WebInputProps,
     WebLoaderProps, WebSelectFieldProps,
     WebSeperatorProps, WebSidebarContentProps, WebSidebarProps, WebSidebarProviderProps,
-    WebSidebarTogglerProps, WebTextareaProps,
+    WebSidebarTogglerProps, WebTabProps, WebTextareaProps,
     WebToastProps
 } from "mmcore-ui";
 
@@ -57,4 +57,5 @@ export interface UIComponentSpec {
     DialogGenerator: UIComponent<WebDialogGeneratorProps>
 
     Image: UIComponent<WebImageProps>
+    Tab: UIComponent<WebTabProps>
 }

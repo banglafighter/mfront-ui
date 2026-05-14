@@ -27,6 +27,7 @@ import { SidebarToggler } from "./ui/sidebar-toggler"
 import { Textarea } from "./ui/textarea"
 import { Image } from "./ui/image"
 import {toast, ToastBox } from "./ui/toast-box"
+import { Tab } from "./ui/tab"
 
 export type {
     UIAdapterData,
@@ -86,4 +87,5 @@ export {
     useDialogEngine,
 
     Image,
+    Tab,
 }
