@@ -32,6 +32,7 @@ import {Table, TBody, TD, TFoot, TH, THead, TR } from "./ui/table"
 import { TableGenerator } from "./ui/table-generator"
 import useTableEngine from "./hook/use-table-engine"
 import { Pagination } from "./ui/pagination"
+import { FileField } from "./ui/file-field"
 
 export type {
     UIAdapterData,
@@ -71,6 +72,7 @@ export {
     Input,
     Textarea,
     SelectField,
+    FileField,
 
     FieldGenerator,
     FieldGroup,

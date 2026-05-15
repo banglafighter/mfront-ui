@@ -6,7 +6,7 @@ import {
     WebDialogGeneratorProps,
     WebDialogHeaderProps, WebDialogProps,
     WebDialogSubTitleProps, WebDialogTitleProps, WebDropdownProps, WebFieldGeneratorProps,
-    WebFieldGroupProps, WebGridItemProps, WebGridProps, WebImageProps,
+    WebFieldGroupProps, WebFileFieldProps, WebGridItemProps, WebGridProps, WebImageProps,
     WebInputFieldProps, WebInputFrameProps,
     WebInputProps,
     WebLoaderProps, WebPaginationProps, WebSelectFieldProps,
@@ -40,6 +40,7 @@ export interface UIComponentSpec {
     Input: UIComponent<WebInputProps>
     Textarea: UIComponent<WebTextareaProps>
     SelectField: UIComponent<WebSelectFieldProps>
+    FileField: UIComponent<WebFileFieldProps>
 
     FieldGenerator: UIComponent<WebFieldGeneratorProps>
     FieldGroup: UIComponent<WebFieldGroupProps>
