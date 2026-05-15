@@ -9,7 +9,7 @@ import {
     WebFieldGroupProps, WebGridItemProps, WebGridProps, WebImageProps,
     WebInputFieldProps, WebInputFrameProps,
     WebInputProps,
-    WebLoaderProps, WebSelectFieldProps,
+    WebLoaderProps, WebPaginationProps, WebSelectFieldProps,
     WebSeperatorProps, WebSidebarContentProps, WebSidebarProps, WebSidebarProviderProps,
     WebSidebarTogglerProps, WebTableGeneratorProps, WebTableProps, WebTabProps, WebTBodyProps,
     WebTDProps, WebTextareaProps, WebTFootProps, WebTHeadProps,
@@ -69,4 +69,5 @@ export interface UIComponentSpec {
     TH: UIComponent<WebTHProps>
     TD: UIComponent<WebTDProps>
     TableGenerator: UIComponent<WebTableGeneratorProps>
+    Pagination: UIComponent<WebPaginationProps>
 }

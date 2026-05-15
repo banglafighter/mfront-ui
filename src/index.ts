@@ -31,6 +31,7 @@ import { Tab } from "./ui/tab"
 import {Table, TBody, TD, TFoot, TH, THead, TR } from "./ui/table"
 import { TableGenerator } from "./ui/table-generator"
 import useTableEngine from "./hook/use-table-engine"
+import { Pagination } from "./ui/pagination"
 
 export type {
     UIAdapterData,
@@ -100,5 +101,6 @@ export {
     TH,
     TD,
     useTableEngine,
-    TableGenerator
+    TableGenerator,
+    Pagination
 }
