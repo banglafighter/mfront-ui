@@ -33,6 +33,7 @@ import { TableGenerator } from "./ui/table-generator"
 import useTableEngine from "./hook/use-table-engine"
 import { Pagination } from "./ui/pagination"
 import { FileField } from "./ui/file-field"
+import { CheckField } from "./ui/check-field"
 
 export type {
     UIAdapterData,
@@ -73,6 +74,7 @@ export {
     Textarea,
     SelectField,
     FileField,
+    CheckField,
 
     FieldGenerator,
     FieldGroup,

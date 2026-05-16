@@ -2,7 +2,7 @@ import {UIComponent} from "mmcore";
 import {
     WebButtonGroupProps,
     WebButtonProps, WebCardActionProps, WebCardBodyProps, WebCardFooterProps, WebCardHeaderProps,
-    WebCardProps, WebCardSubTitleProps, WebCardTitleProps, WebDialogBodyProps, WebDialogFooterProps,
+    WebCardProps, WebCardSubTitleProps, WebCardTitleProps, WebCheckFieldProps, WebDialogBodyProps, WebDialogFooterProps,
     WebDialogGeneratorProps,
     WebDialogHeaderProps, WebDialogProps,
     WebDialogSubTitleProps, WebDialogTitleProps, WebDropdownProps, WebFieldGeneratorProps,
@@ -41,6 +41,7 @@ export interface UIComponentSpec {
     Textarea: UIComponent<WebTextareaProps>
     SelectField: UIComponent<WebSelectFieldProps>
     FileField: UIComponent<WebFileFieldProps>
+    CheckField: UIComponent<WebCheckFieldProps>
 
     FieldGenerator: UIComponent<WebFieldGeneratorProps>
     FieldGroup: UIComponent<WebFieldGroupProps>
