@@ -35,6 +35,7 @@ import { Pagination } from "./ui/pagination"
 import { FileField } from "./ui/file-field"
 import { CheckField } from "./ui/check-field"
 import { Popover } from "./ui/popover"
+import { Calendar } from "./ui/calendar"
 
 export type {
     UIAdapterData,
@@ -108,5 +109,7 @@ export {
     TD,
     useTableEngine,
     TableGenerator,
-    Pagination
+    Pagination,
+
+    Calendar
 }

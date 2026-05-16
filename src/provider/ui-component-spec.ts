@@ -1,7 +1,7 @@
 import {UIComponent} from "mmcore";
 import {
     WebButtonGroupProps,
-    WebButtonProps, WebCardActionProps, WebCardBodyProps, WebCardFooterProps, WebCardHeaderProps,
+    WebButtonProps, WebCalendarProps, WebCardActionProps, WebCardBodyProps, WebCardFooterProps, WebCardHeaderProps,
     WebCardProps, WebCardSubTitleProps, WebCardTitleProps, WebCheckFieldProps, WebDialogBodyProps, WebDialogFooterProps,
     WebDialogGeneratorProps,
     WebDialogHeaderProps, WebDialogProps,
@@ -73,4 +73,6 @@ export interface UIComponentSpec {
     TD: UIComponent<WebTDProps>
     TableGenerator: UIComponent<WebTableGeneratorProps>
     Pagination: UIComponent<WebPaginationProps>
+
+    Calendar: UIComponent<WebCalendarProps>
 }
