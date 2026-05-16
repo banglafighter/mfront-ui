@@ -9,7 +9,7 @@ import {
     WebFieldGroupProps, WebFileFieldProps, WebGridItemProps, WebGridProps, WebImageProps,
     WebInputFieldProps, WebInputFrameProps,
     WebInputProps,
-    WebLoaderProps, WebPaginationProps, WebSelectFieldProps,
+    WebLoaderProps, WebPaginationProps, WebPopoverProps, WebSelectFieldProps,
     WebSeperatorProps, WebSidebarContentProps, WebSidebarProps, WebSidebarProviderProps,
     WebSidebarTogglerProps, WebTableGeneratorProps, WebTableProps, WebTabProps, WebTBodyProps,
     WebTDProps, WebTextareaProps, WebTFootProps, WebTHeadProps,
@@ -46,6 +46,7 @@ export interface UIComponentSpec {
     FieldGenerator: UIComponent<WebFieldGeneratorProps>
     FieldGroup: UIComponent<WebFieldGroupProps>
     Dropdown: UIComponent<WebDropdownProps>
+    Popover: UIComponent<WebPopoverProps>
 
     Sidebar: UIComponent<WebSidebarProps>
     SidebarContent: UIComponent<WebSidebarContentProps>
