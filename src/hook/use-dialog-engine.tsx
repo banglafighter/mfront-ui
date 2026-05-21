@@ -20,6 +20,19 @@ export default function useDialogEngine(): WebDialogEngineProps {
         if (props.slideFrom) {
             _actionData.slideFrom = props.slideFrom
         }
+
+        if (props.disableBlockClose) {
+            _actionData.disableBlockClose = props.disableBlockClose
+        }
+
+        if (props.type) {
+            _actionData.type = props.type
+        }
+
+        if (props.dialogSize) {
+            _actionData.dialogSize = props.dialogSize
+        }
+
         setOpen(true);
     }
 
