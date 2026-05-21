@@ -1,6 +1,6 @@
 {
   "name": "mfront-ui",
-  "version": "0.0.5-alpha.48",
+  "version": "0.0.5-alpha.53",
   "description": "mFront UI Specifier",
   "scripts": {
     "build": "tsdown",
