@@ -35,21 +35,18 @@ import { FileField } from "./ui/file-field"
 import { CheckField } from "./ui/check-field"
 import { Popover } from "./ui/popover"
 import { Calendar } from "./ui/calendar"
-import { MFrontAdapterProvider, useUI } from "./provider/mfront-adapter-provider"
-import { MFrontAdapterData } from "./provider/mfront-adapter-data"
+import { useUI } from "./provider/ui-adapter"
 
 export type {
     UIAdapterData,
     UIComponentSpec,
     UIActionSpec,
-    MFrontAdapterData
 }
 
 export {
     useFieldEngine,
     useFieldHelper,
 
-    MFrontAdapterProvider,
     useUI,
     useUIUtil,
     UICommonUtil,

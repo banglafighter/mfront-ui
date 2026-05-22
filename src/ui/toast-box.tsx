@@ -1,7 +1,7 @@
 import {useAppContext} from "mfront";
 import {WebToastActionProps, WebToastProps} from "mmcore-ui";
 import {UICommonUtil} from "./../common/ui-common-util";
-import { useUI } from "../provider/mfront-adapter-provider";
+import {useUI} from "./../provider/ui-adapter";
 
 export function ToastBox(props: WebToastProps) {
     const ui = useUI()
