@@ -5,7 +5,6 @@ import useFieldHelper from "./hook/use-field-helper"
 import useUIUtil from "./hook/use-ui-util"
 import {UIActionSpec} from "./provider/ui-action-spec"
 import {UIAdapterData} from "./provider/ui-adapter-data"
-import {UIAdapterProvider, useUI} from "./provider/ui-adapter-provider"
 import {UIComponentSpec} from "./provider/ui-component-spec"
 import { Button, ButtonGroup } from "./ui/button"
 import { Card, CardAction, CardBody, CardFooter, CardHeader, CardSubTitle, CardTitle } from "./ui/card"
@@ -36,18 +35,21 @@ import { FileField } from "./ui/file-field"
 import { CheckField } from "./ui/check-field"
 import { Popover } from "./ui/popover"
 import { Calendar } from "./ui/calendar"
+import { MFrontAdapterProvider, useUI } from "./provider/mfront-adapter-provider"
+import { MFrontAdapterData } from "./provider/mfront-adapter-data"
 
 export type {
     UIAdapterData,
     UIComponentSpec,
-    UIActionSpec
+    UIActionSpec,
+    MFrontAdapterData
 }
 
 export {
     useFieldEngine,
     useFieldHelper,
 
-    UIAdapterProvider,
+    MFrontAdapterProvider,
     useUI,
     useUIUtil,
     UICommonUtil,
