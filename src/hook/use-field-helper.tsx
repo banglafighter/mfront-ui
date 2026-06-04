@@ -9,7 +9,7 @@ interface FieldHelper<T extends InputElementType> {
 
 interface FieldHelperProps<T extends InputElementType> {
     name: string
-    defaultValue?: MixType
+    defaultValue?: MixType | Array<any>
     engine?: WebFieldEngineProps
     onChange?: (event: MMReactChangeEvent<T>) => void
 }
