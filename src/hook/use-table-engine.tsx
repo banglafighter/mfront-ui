@@ -6,6 +6,7 @@ export default function useTableEngine(): WebTableEngineProps {
     const isInitColumns = mmReactUseRef<boolean>(false);
     const [dataList, setDataList] = mmReactUseState<Record<string, UINode>[]>([]);
     const columnsStore = mmReactUseRef<WebTableGeneratorColumnProps[]>([]);
+    let dynamicColumns: WebTableGeneratorColumnProps[] = []
 
     const registerColumns = (columns: (columns: WebTableGeneratorColumnProps[]) => WebTableGeneratorColumnProps[]): WebTableGeneratorColumnProps[] => {
         if (!isInitColumns.current) {
@@ -19,15 +20,19 @@ export default function useTableEngine(): WebTableEngineProps {
         setDataList(data)
     }
 
-    const getColumns = (): WebTableGeneratorColumnProps[] => {
-        return columnsStore.current
+    const addDynamicColumns = (columns: (columns: WebTableGeneratorColumnProps[]) => WebTableGeneratorColumnProps[]): void => {
+        dynamicColumns = columns(dynamicColumns)
     }
 
+    const getColumns = (): WebTableGeneratorColumnProps[] => {
+        return [...columnsStore.current, ...dynamicColumns]
+    }
 
     return {
         registerColumns,
         dataList,
         loadData,
-        getColumns
+        getColumns,
+        addDynamicColumns
     }
 }
