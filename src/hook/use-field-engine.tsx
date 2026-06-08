@@ -1,4 +1,5 @@
 import {
+    FieldValueType,
     InputElementType,
     RegisteredFieldValidated,
     WebDefaultInputFieldPropsBase,
@@ -6,13 +7,13 @@ import {
     WebFieldSpec,
     WebInputFieldProps
 } from "mmcore-ui";
-import {MixType, mmReactUseRef, mmReactUseState} from "mmcore";
+import {mmReactUseRef, mmReactUseState} from "mmcore";
 
 export default function useFieldEngine(): WebFieldEngineProps {
     const fieldSpec = mmReactUseRef<WebFieldSpec>(new WebFieldSpec())
     const isInitSpec = mmReactUseRef<boolean>(false);
     const refs = mmReactUseRef(new Map<string, InputElementType>())
-    const nameValueStore = mmReactUseRef<Record<string, MixType>>({});
+    const nameValueStore = mmReactUseRef<Record<string, FieldValueType>>({});
     const [version, setVersion] = mmReactUseState(0)
 
 
@@ -36,7 +37,7 @@ export default function useFieldEngine(): WebFieldEngineProps {
         refs.current.delete(name)
     }
 
-    const setFieldValue = (name: string, value: MixType) => {
+    const setFieldValue = (name: string, value: FieldValueType) => {
         nameValueStore.current[name] = value
         const element = refs.current.get(name)
         if (element) {
@@ -45,13 +46,13 @@ export default function useFieldEngine(): WebFieldEngineProps {
         fieldSpec.current.updateDefaultValue(name, value)
     }
 
-    const setFieldValues = (data: Record<string, MixType>) => {
+    const setFieldValues = (data: Record<string, FieldValueType>) => {
         Object.entries(data).forEach(([k, v]) => {
-            setFieldValue(k, v as MixType);
+            setFieldValue(k, v as FieldValueType);
         });
     };
 
-    const getFieldValues = (): Record<string, MixType> => {
+    const getFieldValues = (): Record<string, FieldValueType> => {
         return nameValueStore.current
     }
 
@@ -60,14 +61,14 @@ export default function useFieldEngine(): WebFieldEngineProps {
         if (notify === undefined || notify === null) {
             notify = true
         }
-        let fieldValues: Record<string, MixType> = getFieldValues()
+        let fieldValues: Record<string, FieldValueType> = getFieldValues()
         let fieldList: WebDefaultInputFieldPropsBase[] = fieldSpecList()
         if (fieldList && fieldList.length !== 0) {
             fieldList.forEach((field: WebDefaultInputFieldPropsBase) => {
                 if (field.isHidden) {
                     return
                 }
-                let value: MixType | undefined = fieldValues[field.name]
+                let value: FieldValueType | undefined = fieldValues[field.name]
                 if (value !== undefined) {
                     field.defaultValue = value
                 }
@@ -97,6 +98,20 @@ export default function useFieldEngine(): WebFieldEngineProps {
 
         return {
             isValid
+        }
+    }
+
+    const setFieldErrors = (errors: Record<string, string>, notify: boolean = true) => {
+        Object.entries(errors).forEach(([field, message]) => {
+            let inputFieldProps: WebDefaultInputFieldPropsBase | undefined = getSpec<WebDefaultInputFieldPropsBase>(field)
+            if (inputFieldProps && fieldSpec.current) {
+                inputFieldProps.errorText = message
+                inputFieldProps.isError = true
+                fieldSpec.current.updateSpec(inputFieldProps)
+            }
+        })
+        if (notify) {
+            reload()
         }
     }
 
@@ -131,6 +146,7 @@ export default function useFieldEngine(): WebFieldEngineProps {
         updateInputFieldSpec,
         reload,
         getSpec,
+        setFieldErrors,
         validateRegisterFields,
         version
     }
