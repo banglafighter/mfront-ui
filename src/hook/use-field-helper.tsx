@@ -1,5 +1,5 @@
-import {MixType, MMReactChangeEvent, MMReactRefObject, mmReactUseEffect, mmReactUseRef} from "mmcore";
-import {InputElementType, WebFieldEngineProps} from "mmcore-ui";
+import {MMReactChangeEvent, MMReactRefObject, mmReactUseEffect, mmReactUseRef} from "mmcore";
+import {FieldValueType, InputElementType, WebFieldEngineProps} from "mmcore-ui";
 
 
 interface FieldHelper<T extends InputElementType> {
@@ -9,7 +9,7 @@ interface FieldHelper<T extends InputElementType> {
 
 interface FieldHelperProps<T extends InputElementType> {
     name: string
-    defaultValue?: MixType | Array<any>
+    defaultValue?: FieldValueType
     engine?: WebFieldEngineProps
     onChange?: (event: MMReactChangeEvent<T>) => void
 }
