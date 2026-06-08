@@ -1,5 +1,6 @@
 import {UIComponent} from "mmcore";
 import {
+    WebBadgeProps,
     WebButtonGroupProps,
     WebButtonProps, WebCalendarProps, WebCardActionProps, WebCardBodyProps, WebCardFooterProps, WebCardHeaderProps,
     WebCardProps, WebCardSubTitleProps, WebCardTitleProps, WebCheckFieldProps, WebDialogBodyProps, WebDialogFooterProps,
@@ -23,6 +24,7 @@ export interface UIComponentSpec {
     ButtonGroup: UIComponent<WebButtonGroupProps>
     Separator: UIComponent<WebSeperatorProps>
     Loader: UIComponent<WebLoaderProps>
+    Badge: UIComponent<WebBadgeProps>
 
     Card: UIComponent<WebCardProps>
     CardHeader: UIComponent<WebCardHeaderProps>

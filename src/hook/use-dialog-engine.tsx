@@ -7,7 +7,7 @@ import {mmReactUseRef, mmReactUseState, UINode} from "mmcore";
 export default function useDialogEngine(): WebDialogEngineProps {
     let actionData = mmReactUseRef<Record<string, UINode | DialogFooterActionButton[]>>({})
     const [isOpen, setOpen] = mmReactUseState(false);
-    const open = (props: DialogEngineOpenProps) => {
+    const open = (props: DialogEngineOpenProps = {}) => {
         actionData.current = {}
         const _actionData = actionData.current
         if (props.title) {

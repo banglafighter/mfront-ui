@@ -36,6 +36,7 @@ import { CheckField } from "./ui/check-field"
 import { Popover } from "./ui/popover"
 import { Calendar } from "./ui/calendar"
 import { useUI } from "./provider/ui-adapter"
+import { Badge } from "./ui/badge"
 
 export type {
     UIAdapterData,
@@ -55,6 +56,7 @@ export {
     toast,
     Button,
     ButtonGroup,
+    Badge,
     Separator,
     Loader,
 
