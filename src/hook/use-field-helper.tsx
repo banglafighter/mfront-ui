@@ -5,6 +5,7 @@ import {FieldValueType, InputElementType, WebFieldEngineProps} from "mmcore-ui";
 interface FieldHelper<T extends InputElementType> {
     fieldRef: MMReactRefObject<T | null>
     handleChange: (event: MMReactChangeEvent<T>) => void
+    setFieldValue: (name: string, value: FieldValueType, event?: MMReactChangeEvent<T>) => void
 }
 
 interface FieldHelperProps<T extends InputElementType> {
@@ -38,8 +39,16 @@ export default function useFieldHelper<T extends InputElementType>({ name, defau
         }
     }
 
+    const setFieldValue = (name: string, value: FieldValueType, event?: MMReactChangeEvent<T>) => {
+        engine?.setFieldValue(name, value)
+        if (onChange && event) {
+            onChange(event)
+        }
+    }
+
     return {
         fieldRef,
+        setFieldValue,
         handleChange
     }
 }
