@@ -37,6 +37,7 @@ import { Popover } from "./ui/popover"
 import { Calendar } from "./ui/calendar"
 import { useUI } from "./provider/ui-adapter"
 import { Badge } from "./ui/badge"
+import { DateTimeField } from "./ui/date-time-field"
 
 export type {
     UIAdapterData,
@@ -112,5 +113,6 @@ export {
     TableGenerator,
     Pagination,
 
-    Calendar
+    Calendar,
+    DateTimeField
 }

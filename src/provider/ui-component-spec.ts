@@ -3,7 +3,8 @@ import {
     WebBadgeProps,
     WebButtonGroupProps,
     WebButtonProps, WebCalendarProps, WebCardActionProps, WebCardBodyProps, WebCardFooterProps, WebCardHeaderProps,
-    WebCardProps, WebCardSubTitleProps, WebCardTitleProps, WebCheckFieldProps, WebDialogBodyProps, WebDialogFooterProps,
+    WebCardProps, WebCardSubTitleProps, WebCardTitleProps, WebCheckFieldProps,
+    WebDateTimeFieldProps, WebDialogBodyProps, WebDialogFooterProps,
     WebDialogGeneratorProps,
     WebDialogHeaderProps, WebDialogProps,
     WebDialogSubTitleProps, WebDialogTitleProps, WebDropdownProps, WebFieldGeneratorProps,
@@ -77,4 +78,5 @@ export interface UIComponentSpec {
     Pagination: UIComponent<WebPaginationProps>
 
     Calendar: UIComponent<WebCalendarProps>
+    DateTimeField: UIComponent<WebDateTimeFieldProps>
 }
