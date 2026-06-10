@@ -7,7 +7,7 @@ import {
     WebFieldSpec,
     WebInputFieldProps
 } from "mmcore-ui";
-import {mmReactUseRef, mmReactUseState} from "mmcore";
+import {MixType, mmReactUseRef, mmReactUseState} from "mmcore";
 
 export default function useFieldEngine(): WebFieldEngineProps {
     const fieldSpec = mmReactUseRef<WebFieldSpec>(new WebFieldSpec())
@@ -115,6 +115,24 @@ export default function useFieldEngine(): WebFieldEngineProps {
         }
     }
 
+    const setSelectOptions = (name: string, options: Record<string, MixType>[], notify: boolean = true) => {
+        if (fieldSpec.current) {
+            fieldSpec.current.setSelectOptions(name, options)
+        }
+        if (notify) {
+            reload()
+        }
+    }
+
+    const setSelectOptionsByOptionKey = (keyValues: Record<string, Record<string, MixType>[]>, notify: boolean = true) => {
+        if (fieldSpec.current) {
+            fieldSpec.current.setSelectOptionsByOptionKey(keyValues)
+        }
+        if (notify) {
+            reload()
+        }
+    }
+
     const updateInputFieldSpec = (spec: WebInputFieldProps, notify?: boolean) => {
         if (fieldSpec.current) {
             fieldSpec.current.updateSpec(spec)
@@ -148,7 +166,9 @@ export default function useFieldEngine(): WebFieldEngineProps {
         getSpec,
         setFieldErrors,
         validateRegisterFields,
-        version
+        version,
+        setSelectOptions,
+        setSelectOptionsByOptionKey
     }
 
 }
