@@ -1,11 +1,12 @@
 import {
     DialogEngineConfirmAlertProps, DialogEngineOpenProps,
-    DialogFooterActionButton, WebDialogEngineProps,
+    DialogFooterActionButton, DialogProcessor, WebDialogEngineProps,
 } from "mmcore-ui";
 import {mmReactUseRef, mmReactUseState, UINode} from "mmcore";
 
 export default function useDialogEngine(): WebDialogEngineProps {
     let actionData = mmReactUseRef<Record<string, UINode | DialogFooterActionButton[]>>({})
+    let processors = mmReactUseRef<DialogProcessor>({})
     const [isOpen, setOpen] = mmReactUseState(false);
     const open = (props: DialogEngineOpenProps = {}) => {
         actionData.current = {}
@@ -32,8 +33,21 @@ export default function useDialogEngine(): WebDialogEngineProps {
         if (props.dialogSize) {
             _actionData.dialogSize = props.dialogSize
         }
+        preloadThenOpen(props.payload)
+    }
 
-        setOpen(true);
+    const preloadThenOpen = (payload?: any) => {
+        if (processors.current && processors.current.preload) {
+            processors.current.preload(payload).then(() => {
+                setOpen(true)
+            })
+        } else {
+            setOpen(true);
+        }
+    }
+
+    const registerProcessor = (processor: DialogProcessor) => {
+        processors.current = processor
     }
 
     const close = () => {
@@ -88,7 +102,7 @@ export default function useDialogEngine(): WebDialogEngineProps {
             }
         })
         _actionData.footerActionButtons = footerActionButtons
-        setOpen(true)
+        preloadThenOpen(props.payload)
     }
 
     const getActionValue = <T = UINode | DialogFooterActionButton[] | undefined>(dataKey: string, defaultData?: T): T => {
@@ -103,6 +117,7 @@ export default function useDialogEngine(): WebDialogEngineProps {
         open,
         isOpen,
         getActionValue,
-        confirm
+        confirm,
+        registerProcessor
     }
 }
