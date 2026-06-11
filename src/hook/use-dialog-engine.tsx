@@ -46,8 +46,11 @@ export default function useDialogEngine(): WebDialogEngineProps {
         }
     }
 
-    const registerProcessor = (processor: DialogProcessor) => {
-        processors.current = processor
+    const registerProcessor = (processor: Partial<DialogProcessor>) => {
+        processors.current = {
+            ...processors.current,
+            ...processor,
+        }
     }
 
     const close = () => {
