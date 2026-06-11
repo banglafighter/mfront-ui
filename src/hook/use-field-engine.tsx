@@ -50,8 +50,8 @@ export default function useFieldEngine(): WebFieldEngineProps {
     }
 
     const setFieldValues = (data: Record<string, FieldValueType>, ignoreNull: boolean = true) => {
-        Object.entries(data).forEach(([k, v]) => {
-            setFieldValue(k, v as FieldValueType, ignoreNull);
+        Object.entries(data).forEach(([name, value]) => {
+            setFieldValue(name, value as FieldValueType, ignoreNull);
         });
     };
 
