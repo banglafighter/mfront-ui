@@ -14,7 +14,7 @@ export default function useFieldEngine(): WebFieldEngineProps {
     const isInitSpec = mmReactUseRef<boolean>(false);
     const refs = mmReactUseRef(new Map<string, InputElementType>())
     const nameValueStore = mmReactUseRef<Record<string, FieldValueType>>({});
-    const [version, setVersion] = mmReactUseState(0)
+    const [version, setVersion] = mmReactUseState<number>(0)
 
 
     const registerFields = (fields: (spec: WebFieldSpec) => WebFieldSpec): WebFieldSpec => {
