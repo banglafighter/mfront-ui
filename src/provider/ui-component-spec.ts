@@ -1,5 +1,6 @@
 import {UIComponent} from "mmcore";
 import {
+    WebAccordionProps,
     WebBadgeProps,
     WebButtonGroupProps,
     WebButtonProps, WebCalendarProps, WebCardActionProps, WebCardBodyProps, WebCardFooterProps, WebCardHeaderProps,
@@ -20,6 +21,8 @@ import {
 } from "mmcore-ui";
 
 export interface UIComponentSpec {
+    Accordion: UIComponent<WebAccordionProps>
+
     ToastBox: UIComponent<WebToastProps>
     Button: UIComponent<WebButtonProps>
     ButtonGroup: UIComponent<WebButtonGroupProps>

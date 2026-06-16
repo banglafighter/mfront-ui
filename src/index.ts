@@ -38,6 +38,7 @@ import { Calendar } from "./ui/calendar"
 import { useUI } from "./provider/ui-adapter"
 import { Badge } from "./ui/badge"
 import { DateTimeField } from "./ui/date-time-field"
+import { Accordion } from "./ui/accordion"
 
 export * from "./common/ui-virtual-ref"
 
@@ -55,6 +56,7 @@ export {
     useUIUtil,
     UICommonUtil,
 
+    Accordion,
     ToastBox,
     toast,
     Button,
