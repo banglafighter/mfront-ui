@@ -37,21 +37,27 @@ export default function useFieldEngine(): WebFieldEngineProps {
         refs.current.delete(name)
     }
 
-    const setFieldValue = (name: string, value: FieldValueType, ignoreNull: boolean = true) => {
+    const setFieldValue = (name: string, value: FieldValueType, ignoreNull: boolean = true, setInputValue: boolean = false) => {
         if (ignoreNull && value === null) {
             return
         }
-        nameValueStore.current[name] = value
-        const element = refs.current.get(name)
-        if (element) {
-            element.value = String(value)
-        }
         fieldSpec.current.updateDefaultValue(name, value)
+        nameValueStore.current[name] = value
+        if (setInputValue) {
+            const element = refs.current.get(name)
+            if (element) {
+                element.value = String(value)
+            }
+        }
     }
 
-    const setFieldValues = (data: Record<string, FieldValueType>, ignoreNull: boolean = true) => {
+    const getFieldValue = (name: string, defaultValue?: FieldValueType): FieldValueType | undefined => {
+        return nameValueStore.current[name] ? nameValueStore.current[name] : defaultValue
+    }
+
+    const setFieldValues = (data: Record<string, FieldValueType>, ignoreNull: boolean = true, setInputValue: boolean = false) => {
         Object.entries(data).forEach(([name, value]) => {
-            setFieldValue(name, value as FieldValueType, ignoreNull);
+            setFieldValue(name, value as FieldValueType, ignoreNull, setInputValue);
         });
     };
 
@@ -171,7 +177,8 @@ export default function useFieldEngine(): WebFieldEngineProps {
         validateRegisterFields,
         version,
         setSelectOptions,
-        setSelectOptionsByOptionKey
+        setSelectOptionsByOptionKey,
+        getFieldValue
     }
 
 }
