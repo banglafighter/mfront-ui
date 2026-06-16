@@ -46,7 +46,7 @@ export default function useFieldEngine(): WebFieldEngineProps {
         if (setInputValue) {
             const element = refs.current.get(name)
             if (element) {
-                element.value = String(value)
+                element.value = value as any
             }
         }
     }

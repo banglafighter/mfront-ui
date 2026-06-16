@@ -26,8 +26,12 @@ export default function useFieldHelper<T extends InputElementType>({ name, defau
     }, [])
 
     mmReactUseEffect(() => {
-        if (defaultValue !== undefined && fieldRef.current) {
-            engine?.setFieldValue(name, defaultValue, false, true)
+        if (defaultValue !== undefined) {
+            if (engine) {
+                engine?.setFieldValue(name, defaultValue, false, true)
+            } else if (fieldRef.current) {
+                fieldRef.current.value = defaultValue as any
+            }
         }
     }, [defaultValue])
 
