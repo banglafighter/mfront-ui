@@ -11,7 +11,8 @@ import {
     WebDialogSubTitleProps, WebDialogTitleProps, WebDropdownProps, WebFieldGeneratorProps,
     WebFieldGroupProps, WebFileFieldProps, WebGridItemProps, WebGridProps, WebImageProps,
     WebInputFieldProps, WebInputFrameProps,
-    WebInputProps,
+    WebInputProps, WebItemActionProps, WebItemBodyProps, WebItemMediaProps,
+    WebItemMediaPropsBase, WebItemProps, WebItemSubTitleProps, WebItemTitleProps,
     WebLoaderProps, WebPaginationProps, WebPopoverProps, WebSelectFieldProps,
     WebSeperatorProps, WebSidebarContentProps, WebSidebarProps, WebSidebarProviderProps,
     WebSidebarTogglerProps, WebTableGeneratorProps, WebTableProps, WebTabProps, WebTBodyProps,
@@ -37,6 +38,13 @@ export interface UIComponentSpec {
     CardTitle: UIComponent<WebCardTitleProps>
     CardSubTitle: UIComponent<WebCardSubTitleProps>
     CardAction: UIComponent<WebCardActionProps>
+
+    Item: UIComponent<WebItemProps>
+    ItemBody: UIComponent<WebItemBodyProps>
+    ItemTitle: UIComponent<WebItemTitleProps>
+    ItemSubTitle: UIComponent<WebItemSubTitleProps>
+    ItemAction: UIComponent<WebItemActionProps>
+    ItemMedia: UIComponent<WebItemMediaProps>
 
     Grid: UIComponent<WebGridProps>
     GridItem: UIComponent<WebGridItemProps>
