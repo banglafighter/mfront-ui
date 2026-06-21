@@ -3,6 +3,7 @@ import {
     DialogFooterActionButton, DialogProcessor, WebDialogEngineProps,
 } from "mmcore-ui";
 import {mmReactUseRef, mmReactUseState, UINode} from "mmcore";
+import {_t} from "mfront";
 
 export default function useDialogEngine(): WebDialogEngineProps {
     let actionData = mmReactUseRef<Record<string, UINode | DialogFooterActionButton[]>>({})
@@ -82,7 +83,7 @@ export default function useDialogEngine(): WebDialogEngineProps {
         let footerActionButtons: DialogFooterActionButton[] = []
         if (!props.disableCancelButton) {
             footerActionButtons.push({
-                label: "Cancel",
+                label: _t("Cancel"),
                 variant: "outline",
                 onClick: (data?: unknown) => {
                     close()
