@@ -37,7 +37,7 @@ export default function useFieldEngine(): WebFieldEngineProps {
         refs.current.delete(name)
     }
 
-    const setFieldValue = (name: string, value: FieldValueType, ignoreNull: boolean = true, setInputValue: boolean = false) => {
+    const setFieldValue = (name: string, value: FieldValueType, ignoreNull: boolean = true, setInputValue: boolean = true) => {
         if (ignoreNull && value === null) {
             return
         }
@@ -55,7 +55,7 @@ export default function useFieldEngine(): WebFieldEngineProps {
         return nameValueStore.current[name] ? nameValueStore.current[name] : defaultValue
     }
 
-    const setFieldValues = (data: Record<string, FieldValueType>, ignoreNull: boolean = true, setInputValue: boolean = false) => {
+    const setFieldValues = (data: Record<string, FieldValueType>, ignoreNull: boolean = true, setInputValue: boolean = true) => {
         Object.entries(data).forEach(([name, value]) => {
             setFieldValue(name, value as FieldValueType, ignoreNull, setInputValue);
         });

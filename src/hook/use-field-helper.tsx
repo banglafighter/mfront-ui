@@ -4,8 +4,8 @@ import {FieldValueType, InputElementType, WebFieldEngineProps} from "mmcore-ui";
 
 interface FieldHelper<T extends InputElementType> {
     fieldRef: MMReactRefObject<T | null>
-    handleChange: (event: MMReactChangeEvent<T>, ignoreNull?: boolean) => void
-    setFieldValue: (name: string, value: FieldValueType, event?: MMReactChangeEvent<T>) => void
+    handleChange: (event: MMReactChangeEvent<T>, ignoreNull?: boolean, setInputValue?: boolean) => void
+    setFieldValue: (name: string, value: FieldValueType, event?: MMReactChangeEvent<T>, ignoreNull?: boolean, setInputValue?: boolean) => void
 }
 
 interface FieldHelperProps<T extends InputElementType> {
@@ -35,15 +35,15 @@ export default function useFieldHelper<T extends InputElementType>({ name, defau
         }
     }, [defaultValue])
 
-    const handleChange = (event: MMReactChangeEvent<T>, ignoreNull?: boolean) => {
-        engine?.setFieldValue(name, event.target.value, ignoreNull)
+    const handleChange = (event: MMReactChangeEvent<T>, ignoreNull: boolean = true, setInputValue: boolean = false) => {
+        engine?.setFieldValue(name, event.target.value, ignoreNull, setInputValue)
         if (onChange) {
             onChange(event)
         }
     }
 
-    const setFieldValue = (name: string, value: FieldValueType, event?: MMReactChangeEvent<T>) => {
-        engine?.setFieldValue(name, value)
+    const setFieldValue = (name: string, value: FieldValueType, event?: MMReactChangeEvent<T>, ignoreNull: boolean = true, setInputValue: boolean = false) => {
+        engine?.setFieldValue(name, value, ignoreNull, setInputValue)
         if (onChange && event) {
             onChange(event)
         }
