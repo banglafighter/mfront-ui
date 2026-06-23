@@ -2,7 +2,7 @@ import {
     FieldValueType,
     InputElementType,
     RegisteredFieldValidated,
-    WebDefaultInputFieldPropsBase,
+    WebDefaultInputFieldPropsBase, WebFieldAllTypeProps,
     WebFieldEngineProps,
     WebFieldSpec,
     WebInputFieldProps
@@ -151,6 +151,24 @@ export default function useFieldEngine(): WebFieldEngineProps {
         }
     }
 
+    const updateSpec = (specs: Record<string, Partial<WebFieldAllTypeProps>>, notify: boolean = true) => {
+        for (const [name, spec] of Object.entries(specs)) {
+            const existingSpec: any = getSpec(name)
+            if (existingSpec) {
+                const mergedSpec = {
+                    ...existingSpec,
+                    ...spec
+                }
+                if (fieldSpec.current) {
+                    fieldSpec.current.updateSpec(mergedSpec)
+                }
+            }
+        }
+        if (notify) {
+            reload()
+        }
+    }
+
     const getSpec = <T, >(name: string): T | undefined => {
         if (fieldSpec.current) {
             return fieldSpec.current.getSpec<T>(name)
@@ -178,7 +196,8 @@ export default function useFieldEngine(): WebFieldEngineProps {
         version,
         setSelectOptions,
         setSelectOptionsByOptionKey,
-        getFieldValue
+        getFieldValue,
+        updateSpec
     }
 
 }
