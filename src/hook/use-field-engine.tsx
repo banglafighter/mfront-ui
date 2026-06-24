@@ -15,6 +15,7 @@ export default function useFieldEngine(): WebFieldEngineProps {
     const refs = mmReactUseRef(new Map<string, InputElementType>())
     const nameValueStore = mmReactUseRef<Record<string, FieldValueType>>({});
     const [version, setVersion] = mmReactUseState<number>(0)
+    const selectOptionsCache = mmReactUseRef<Record<string, Record<string, MixType>[]>>({})
 
 
     const registerFields = (fields: (spec: WebFieldSpec) => WebFieldSpec): WebFieldSpec => {
@@ -180,6 +181,14 @@ export default function useFieldEngine(): WebFieldEngineProps {
         setVersion(version => version + 1)
     }
 
+    const setSelectOptionCache = (name: string, value: Record<string, MixType>[]) => {
+        selectOptionsCache.current[name] = value
+    }
+
+    const getSelectOptionCache = (name: string): Record<string, MixType>[] => {
+        return selectOptionsCache.current[name] || []
+    }
+
     return {
         registerFields,
         fieldSpecList,
@@ -197,7 +206,9 @@ export default function useFieldEngine(): WebFieldEngineProps {
         setSelectOptions,
         setSelectOptionsByOptionKey,
         getFieldValue,
-        updateSpec
+        updateSpec,
+        setSelectOptionCache,
+        getSelectOptionCache,
     }
 
 }
