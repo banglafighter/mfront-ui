@@ -177,6 +177,13 @@ export default function useFieldEngine(): WebFieldEngineProps {
         return undefined
     }
 
+    const removeValue = (name: string): void => {
+        if (name in nameValueStore.current) {
+            delete nameValueStore.current[name];
+        }
+        console.log("removeValue", getFieldValues())
+    }
+
     const reload = () => {
         setVersion(version => version + 1)
     }
@@ -209,6 +216,7 @@ export default function useFieldEngine(): WebFieldEngineProps {
         updateSpec,
         setSelectOptionCache,
         getSelectOptionCache,
+        removeValue,
     }
 
 }
