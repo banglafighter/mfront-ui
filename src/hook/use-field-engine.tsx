@@ -181,7 +181,6 @@ export default function useFieldEngine(): WebFieldEngineProps {
         if (name in nameValueStore.current) {
             delete nameValueStore.current[name];
         }
-        console.log("removeValue", getFieldValues())
     }
 
     const reload = () => {
