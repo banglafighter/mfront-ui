@@ -23,7 +23,7 @@ export default function useDialogEngine(): WebDialogEngineProps {
             _actionData.slideFrom = props.slideFrom
         }
 
-        if (props.disableBlockClose) {
+        if (props.disableBlockClose !== undefined && props.disableBlockClose !== null) {
             _actionData.disableBlockClose = props.disableBlockClose
         }
 
