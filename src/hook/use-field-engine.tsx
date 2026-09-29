@@ -27,7 +27,7 @@ export default function useFieldEngine(): WebFieldEngineProps {
     }
 
     const fieldSpecList = (): WebDefaultInputFieldPropsBase[] => {
-        return fieldSpec.current.getSpecList()
+        return fieldSpec.current.getSpecList() as any
     }
 
     const registerRefs = (name: string, element: InputElementType) => {
