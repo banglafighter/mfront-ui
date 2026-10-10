@@ -13,13 +13,14 @@ import {
     WebInputFieldProps, WebInputFrameProps,
     WebInputProps, WebItemActionProps, WebItemBodyProps, WebItemMediaProps,
     WebItemMediaPropsBase, WebItemProps, WebItemSubTitleProps, WebItemTitleProps,
-    WebLoaderProps, WebPaginationProps, WebPopoverProps, WebSelectFieldProps,
+    WebLoaderProps, WebPaginationProps, WebPopoverProps, WebRadioButtonFieldProps, WebSelectFieldProps,
     WebSeperatorProps, WebSidebarContentProps, WebSidebarProps, WebSidebarProviderProps,
     WebSidebarTogglerProps, WebTableGeneratorProps, WebTableProps, WebTabProps, WebTBodyProps,
     WebTDProps, WebTextareaProps, WebTFootProps, WebTHeadProps,
     WebTHProps,
     WebToastProps, WebTRProps
 } from "mmcore-ui";
+import {RadioButtonField} from "../ui/radio-button-field";
 
 export interface UIComponentSpec {
     Accordion: UIComponent<WebAccordionProps>
@@ -56,6 +57,7 @@ export interface UIComponentSpec {
     SelectField: UIComponent<WebSelectFieldProps>
     FileField: UIComponent<WebFileFieldProps>
     CheckField: UIComponent<WebCheckFieldProps>
+    RadioButtonField: UIComponent<WebRadioButtonFieldProps>
 
     FieldGenerator: UIComponent<WebFieldGeneratorProps>
     FieldGroup: UIComponent<WebFieldGroupProps>

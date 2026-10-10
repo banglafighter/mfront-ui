@@ -40,6 +40,7 @@ import { Badge } from "./ui/badge"
 import { DateTimeField } from "./ui/date-time-field"
 import { Accordion } from "./ui/accordion"
 import { Item, ItemAction, ItemBody, ItemMedia, ItemSubTitle, ItemTitle } from "./ui/item"
+import { RadioButtonField } from "./ui/radio-button-field"
 
 export * from "./common/ui-virtual-ref"
 
@@ -91,6 +92,7 @@ export {
     SelectField,
     FileField,
     CheckField,
+    RadioButtonField,
 
     FieldGenerator,
     FieldGroup,
